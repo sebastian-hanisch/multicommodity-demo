@@ -10,7 +10,7 @@ Vehikel wie in den Vorgänger-Demos: ein Distributionsnetz (Werke → Verteilzen
 
 **Einordnung in die Reihe (die Kanten des Graphen):** Der Ein-Gut-Fluss ist der Sonderfall K = 1 (Test: gleich dem Optimum von `networkx`). Mit mehreren Gütern geht die **totale Unimodularität** verloren: das LP *kann* gebrochene Ecken haben, ganzzahliger Mehrgüterfluss ist NP-schwer, und die Ein-Gut-Verfahren der ersten Stücke lassen sich nicht mehr nacheinander einsetzen.
 Das öffnet die Folgestücke: die **Pfad-Formulierung mit Column Generation** (gegen die Größe des Kanten-LP; die Entkopplung durch Preise ist ihre Idee), **Garg–Könemann** (Näherung mit Preisen) und das **Netzwerkdesign mit Fixkosten** (Benders-Zerlegung, Slope Scaling).
-Bisher gebaut: die ersten acht Stücke.
+Bisher gebaut: die ersten neun Stücke.
 ```
 edmonds-karp-demo (Wurzel: Restgraph, Rückkanten, Max-Flow = Min-Cut)                  [gebaut]
   ├─ dinic-demo (viele kürzeste Wege je Phase: Niveaugraph, blockierender Fluss)        [gebaut]
@@ -21,7 +21,7 @@ edmonds-karp-demo (Wurzel: Restgraph, Rückkanten, Max-Flow = Min-Cut)          
        ├─ cost-scaling-demo (Push-Relabel + ε-Skalierung, das nutzt OR-Tools)           [gebaut]
        └─ multicommodity-demo (mehrere Güter teilen Kapazität: Kanten-LP, Preise)       [dieses Stück]
             ├─ mcf-column-generation-demo (Pfade als Spalten, Pricing = Dijkstra)       [gebaut]
-            ├─ garg-koenemann-demo (Näherung mit Preisen, ohne LP-Löser)                [geplant]
+            ├─ garg-koenemann-demo (Näherung mit Preisen, ohne LP-Löser)                [gebaut]
             └─ Fixkosten-Netzwerkdesign → Benders-Zerlegung, Slope Scaling              [geplant]
 ```
 

@@ -363,12 +363,12 @@ st.markdown(
 | **Eine Kapazität für die Summe der Güter** | Jede Einheit belegt gleich viel Kapazität; in der Praxis braucht Kühlware mehr Platz. **Ansatzpunkt:** Volumen je Gut in der Kapazitätszeile. |
 | **Das Kanten-LP hat K·m Variablen** | Für viele Güter und große Netze wächst es unhandlich. **Ansatzpunkt: Pfad-Formulierung mit Column Generation** (gebaut: mcf-column-generation-demo): nur die Wege, die sich lohnen. |
 | **Ein exaktes LP ist nötig** | Für sehr große Netze genügt oft ein guter Fluss mit garantierter Güte. **Ansatzpunkt: Garg–Könemann** (gebaut: garg-koenemann-demo). |
-| **Die Kanten stehen fest** | Hier gibt es die Lanes und Verteilzentren; wer sie erst bauen oder eröffnen muss, zahlt Fixkosten. **Ansatzpunkt:** Netzwerkdesign mit Fixkosten (Benders-Zerlegung, Slope Scaling). |
+| **Die Kanten stehen fest** | Hier gibt es die Lanes und Verteilzentren; wer sie erst bauen oder eröffnen muss, zahlt Fixkosten. **Ansatzpunkt:** Netzwerkdesign mit Fixkosten (gebaut: fixkosten-netzdesign-demo; danach Benders-Zerlegung, Slope Scaling). |
 | **Teilbare Ströme** | Das LP darf halbe Einheiten schicken; ganzzahlig ist es NP-schwer. Die Lücke ist selten, aber real. **Ansatzpunkt:** ganzzahliges Programm, Branch and Cut. |
 | **Keine Zeit** | Ein Fluss ist eine Momentaufnahme. **Ansatzpunkt:** Zeit-Raum-Netz in der Demo „leercontainer-demo“. |
 """
 )
-st.caption("Die Netzwerkfluss-Linie ist als Ganzes geplant: Edmonds-Karp, Dinic, Push-Relabel, Successive Shortest Paths, Cycle-Canceling, Cost Scaling, Mehrgüterfluss (dieses Stück), Column Generation (gebaut), Garg-Könemann (gebaut), Fixkosten-Netzwerkdesign, Benders-Zerlegung und Slope Scaling - bisher sind die ersten neun gebaut.")
+st.caption("Die Netzwerkfluss-Linie ist als Ganzes geplant: Edmonds-Karp, Dinic, Push-Relabel, Successive Shortest Paths, Cycle-Canceling, Cost Scaling, Mehrgüterfluss (dieses Stück), Column Generation (gebaut), Garg-Könemann (gebaut), Fixkosten-Netzwerkdesign (gebaut), Benders-Zerlegung und Slope Scaling - bisher sind die ersten zehn gebaut.")
 
 st.markdown("---")
 

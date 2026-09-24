@@ -324,7 +324,7 @@ else:
     q2.metric("Entkopplung trifft den LP-Wert", "exakt", delta=f"größte Abweichung {_f(dist['lagrange_err_max'], 6)}", delta_color="off", help="Mit den Schattenpreisen ergeben K unabhängige Min-Cost-Flows minus Σ λ·u genau den LP-Wert - in allen 100 Netzen.")
     q3.metric("Entkoppelte Flüsse überlastet", _share(dist["share_dec_over"]), help="Anteil der Netze, in denen die K unabhängigen Flüsse mit den Preisen gemeinsame Kanten überlasten: die Preise geben den Wert, aber nicht immer eine zulässige Lösung.")
     st.caption(f"Über {len(C.DIST_SEEDS)} feste Netze: die Preise entkoppeln die Güter und treffen den LP-Wert in jedem Netz exakt (Lagrange-Dualität), aber in {_share(dist['share_dec_over'])} der Netze überlasten die entkoppelten Flüsse mindestens eine Kante - "
-               "mehrere Einzelflüsse zu einem zulässigen mischen ist die Idee der Column Generation (nächstes Stück).")
+               "mehrere Einzelflüsse zu einem zulässigen mischen ist die Idee der Column Generation (gebaut: mcf-column-generation-demo).")
 
 st.subheader("🔬 Wie groß wird das LP?")
 st.caption("K Güter auf m Kanten heißen K·m Variablen und K·(n − 2) Erhaltungsgleichungen dazu. Wie wachsen Größe und Iterationen des Lösers mit den Gütern und dem Netz?")
@@ -352,14 +352,14 @@ st.markdown(
 | Annahme | Was passiert, wenn sie verletzt ist - und wer setzt an |
 |---|---|
 | **Eine Kapazität für die Summe der Güter** | Jede Einheit belegt gleich viel Kapazität; in der Praxis braucht Kühlware mehr Platz. **Ansatzpunkt:** Volumen je Gut in der Kapazitätszeile. |
-| **Das Kanten-LP hat K·m Variablen** | Für viele Güter und große Netze wächst es unhandlich. **Ansatzpunkt: Pfad-Formulierung mit Column Generation** (nächstes Stück): nur die Wege, die sich lohnen. |
+| **Das Kanten-LP hat K·m Variablen** | Für viele Güter und große Netze wächst es unhandlich. **Ansatzpunkt: Pfad-Formulierung mit Column Generation** (gebaut: mcf-column-generation-demo): nur die Wege, die sich lohnen. |
 | **Ein exaktes LP ist nötig** | Für sehr große Netze genügt oft ein guter Fluss mit garantierter Güte. **Ansatzpunkt: Garg–Könemann** (Näherung mit Preisen). |
 | **Die Kanten stehen fest** | Hier gibt es die Lanes und Verteilzentren; wer sie erst bauen oder eröffnen muss, zahlt Fixkosten. **Ansatzpunkt:** Netzwerkdesign mit Fixkosten (Benders-Zerlegung, Slope Scaling). |
 | **Teilbare Ströme** | Das LP darf halbe Einheiten schicken; ganzzahlig ist es NP-schwer. Die Lücke ist selten, aber real. **Ansatzpunkt:** ganzzahliges Programm, Branch and Cut. |
 | **Keine Zeit** | Ein Fluss ist eine Momentaufnahme. **Ansatzpunkt:** Zeit-Raum-Netz in der Demo „leercontainer-demo“. |
 """
 )
-st.caption("Die Netzwerkfluss-Linie ist als Ganzes geplant: Edmonds-Karp, Dinic, Push-Relabel, Successive Shortest Paths, Cycle-Canceling, Cost Scaling, Mehrgüterfluss (dieses Stück), Column Generation, Garg-Könemann, Fixkosten-Netzwerkdesign, Benders-Zerlegung und Slope Scaling - bisher sind die ersten sieben gebaut.")
+st.caption("Die Netzwerkfluss-Linie ist als Ganzes geplant: Edmonds-Karp, Dinic, Push-Relabel, Successive Shortest Paths, Cycle-Canceling, Cost Scaling, Mehrgüterfluss (dieses Stück), Column Generation (gebaut), Garg-Könemann, Fixkosten-Netzwerkdesign, Benders-Zerlegung und Slope Scaling - bisher sind die ersten acht gebaut.")
 
 st.markdown("---")
 

@@ -25,6 +25,8 @@ edmonds-karp-demo (Wurzel: Restgraph, Rückkanten, Max-Flow = Min-Cut)          
             └─ fixkosten-netzdesign-demo (Fixkosten: Schranke und Schnitte)             [gebaut]
                  ├─ benders-demo (Entwurf im Master, Fluss im Teilproblem)              [gebaut]
                  └─ slope-scaling-demo (Fixkosten linearisieren, ohne Beweis)           [gebaut]
+       Erweiterung E4 (Kind von multicommodity-demo, konvexe Kosten):
+            frank-wolfe-demo (Nutzergleichgewicht, Alles-oder-nichts-Orakel)              [gebaut]
 ```
 
 ## Ergebnis (Zahlen aus den Tests)

@@ -105,3 +105,7 @@ venv\Scripts\python -m pytest tests -v
 ```
 
 Kosten und Mengen sind ganzzahlig; die Zielwerte des LP werden mit Toleranz verglichen (nicht die Basis des Simplex), und die im Text genannten Anteile und Mittel stehen auf 100 festen Netzen. Die CI (`.github/workflows/tests.yml`) läuft auf Ubuntu mit Python 3.12, bei jedem Push und wöchentlich mit den jeweils neuesten Bibliotheksversionen.
+
+---
+
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Netzwerkfluss: vom Max-Flow zum Netzdesign](https://sebastianhanisch.net/konzepte-netzwerkfluss.html).

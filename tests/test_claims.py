@@ -41,7 +41,7 @@ def test_the_price_of_sharing(dist):
 
 
 def test_sequential_solutions_lose_delivery(dist):
-    """Drei Güter nacheinander: so viel wie das LP in 5 % (angegebene Reihenfolge), 9 % (billigstes zuerst), 7 % (größte zuerst); im Mittel fehlen 4,97 / 3,98 / 5,12 Einheiten; die beste Reihenfolge erreicht das LP in 18 %, die schlechteste ist in 97 % schlechter (im Mittel 1,21 bzw. 8,18 Einheiten fehlen)."""
+    """Drei Güter nacheinander: so gut wie das LP (gleiche Lieferung zu gleichen Kosten, Ziel nicht größer) in 5 % (angegebene Reihenfolge), 9 % (billigstes zuerst), 7 % (größte zuerst); im Mittel fehlen 4,97 / 3,98 / 5,12 Einheiten; die beste Reihenfolge erreicht das LP in 18 %, die schlechteste ist in 97 % schlechter (im Mittel 1,21 bzw. 8,18 Einheiten fehlen)."""
     n = dist["n_seeds"]
     assert [round(100 * dist["share_seq_optimal"][k]) for k in ("given", "cheap", "large")] == [5, 9, 7]
     assert [round(sum(dist["seq_loss"][k]) / n, 2) for k in ("given", "cheap", "large")] == [4.97, 3.98, 5.12]

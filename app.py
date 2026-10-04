@@ -319,7 +319,7 @@ else:
     if "best_loss" in dist:
         rows += [("beste Reihenfolge (Aufzählung)", _share(dist["share_best_optimal"]), _f(sum(dist["best_loss"]) / n, 2), _f(sorted(dist["best_loss"])[n // 2], 1), str(max(dist["best_loss"]))),
                  ("schlechteste Reihenfolge (Aufzählung)", _share(1 - dist["share_worst_bad"]), _f(sum(dist["worst_loss"]) / n, 2), _f(sorted(dist["worst_loss"])[n // 2], 1), str(max(dist["worst_loss"])))]
-    st.table({"Reihenfolge": [r[0] for r in rows], "so viel wie das LP": [r[1] for r in rows], "fehlende Lieferung (Mittel)": [r[2] for r in rows], "(Median)": [r[3] for r in rows], "(größter Wert)": [r[4] for r in rows]})
+    st.table({"Reihenfolge": [r[0] for r in rows], "so gut wie das LP (Lieferung und Kosten)": [r[1] for r in rows], "fehlende Lieferung (Mittel)": [r[2] for r in rows], "(Median)": [r[3] for r in rows], "(größter Wert)": [r[4] for r in rows]})
     st.caption(f"Über {n} feste Netze ({K} Güter). " + ("Auch die beste der Reihenfolgen erreicht das LP nur in " + _share(dist["share_best_optimal"]) + " der Netze; die schlechteste verliert im Mittel " + _f(sum(dist["worst_loss"]) / n, 1) + " Einheiten. " if "best_loss" in dist else "Bei fünf Gütern werden die 120 Reihenfolgen nicht aufgezählt. ")
                + "Eine Regel wie „billigstes zuerst“ hilft im Mittel, garantiert aber nichts - erst das gemeinsame Modell sieht alle Güter auf einmal.")
 
@@ -368,7 +368,7 @@ st.markdown(
 | **Keine Zeit** | Ein Fluss ist eine Momentaufnahme. **Ansatzpunkt:** Zeit-Raum-Netz in der Demo „leercontainer-demo“. |
 """
 )
-st.caption("Die Netzwerkfluss-Linie ist als Ganzes geplant: Edmonds-Karp, Dinic, Push-Relabel, Successive Shortest Paths, Cycle-Canceling, Cost Scaling, Mehrgüterfluss (dieses Stück), Column Generation (gebaut), Garg-Könemann (gebaut), Fixkosten-Netzwerkdesign (gebaut), Benders-Zerlegung (gebaut) und Slope Scaling (gebaut) - bisher sind alle zwölf Stücke der Hauptlinie gebaut.")
+st.caption("Die Netzwerkfluss-Linie ist als Ganzes geplant: Edmonds-Karp, Dinic, Push-Relabel, Successive Shortest Paths, Cycle-Canceling, Cost Scaling, Netzwerksimplex, Mehrgüterfluss (dieses Stück), Column Generation (gebaut), Garg-Könemann (gebaut), Fixkosten-Netzwerkdesign (gebaut), Benders-Zerlegung (gebaut) und Slope Scaling (gebaut) - bisher sind alle dreizehn Stücke der Hauptlinie gebaut.")
 
 st.markdown("---")
 

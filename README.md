@@ -1,6 +1,6 @@
 # Mehrgüterfluss – Güter teilen sich die Kanten – Streamlit-Demo
 
-*(noch nicht deployed)*
+**[→ Demo live ausprobieren](https://sebastianhanisch-multicommodity-demo.streamlit.app/)**
 
 Siebtes Stück der **Netzwerkfluss-Linie** der "Konzepte"-Reihe für die Website "Sebastian Hanisch – Operations Research und Machine Learning", Beginn des Mehrgüter-Asts:
 anders als die Fall-Demos im Portfolio (ein Anwendungsfall, mehrere Verfahren im Vergleich) zeigt diese Demo **ein** Modell – das **Kanten-LP des Mehrgüterflusses** – an einem wachsenden Beispiel.
